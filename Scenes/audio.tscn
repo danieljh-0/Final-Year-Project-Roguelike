@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://unvmuviddhr8"]
+
+[ext_resource type="Script" uid="uid://bnivu28ush6mb" path="res://Scripts/audio.gd" id="1_l04ps"]
+[ext_resource type="AudioStream" uid="uid://byumajrkc8xyc" path="res://Assets/pickupCoin.wav" id="1_y8l05"]
+[ext_resource type="AudioStream" uid="uid://c5o03kc22e5hf" path="res://Assets/heal.wav" id="3_c8j57"]
+[ext_resource type="AudioStream" uid="uid://c03b3yuytbomo" path="res://Assets/hitHurt.wav" id="4_pess6"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_l04ps")
+
+[node name="Coin Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_y8l05")
+bus = &"SFX"
+
+[node name="Heal Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_c8j57")
+bus = &"SFX"
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pess6")
+bus = &"SFX"

@@ -1,0 +1,104 @@
+[gd_scene load_steps=12 format=3 uid="uid://di3iaki3uulh6"]
+
+[ext_resource type="Texture2D" uid="uid://btukyij6oubec" path="res://Assets/Ironchests_RPG_items_pico8_transparentbg_v1.png" id="1_p0twn"]
+[ext_resource type="Script" uid="uid://buafq7l6gi3g" path="res://Scripts/power_up.gd" id="1_xkpu0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvu47"]
+atlas = ExtResource("1_p0twn")
+region = Rect2(504, 416, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0q1e"]
+atlas = ExtResource("1_p0twn")
+region = Rect2(328, 208, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0twn"]
+atlas = ExtResource("1_p0twn")
+region = Rect2(40, 304, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkpu0"]
+atlas = ExtResource("1_p0twn")
+region = Rect2(280, 304, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df8mp"]
+atlas = ExtResource("1_p0twn")
+region = Rect2(152, 272, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgkli"]
+atlas = ExtResource("1_p0twn")
+region = Rect2(216, 728, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drskx"]
+atlas = ExtResource("1_p0twn")
+region = Rect2(424, 232, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2nwm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvu47")
+}],
+"loop": true,
+"name": &"Crown of Ruin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0q1e")
+}],
+"loop": true,
+"name": &"Gloves of Midas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0twn")
+}],
+"loop": true,
+"name": &"Golden Sword",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkpu0")
+}],
+"loop": true,
+"name": &"Iron Shield",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df8mp")
+}],
+"loop": true,
+"name": &"Kingly Sword",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgkli")
+}],
+"loop": true,
+"name": &"Shadow Ring",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drskx")
+}],
+"loop": true,
+"name": &"Warrior\'s Helm",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0twn"]
+size = Vector2(8, 8)
+
+[node name="PowerUp" type="Area2D"]
+script = ExtResource("1_xkpu0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o2nwm")
+animation = &"Warrior\'s Helm"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p0twn")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvsogtmp23ql5"]
+
+[ext_resource type="PackedScene" uid="uid://crw8lrptyp2w1" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://csbs333exjuf5" path="res://Scenes/level1.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://djxd763n5jfw6" path="res://enemy.tscn" id="3_wrm1d"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ebmjs")]
+z_index = 43
+position = Vector2(4, 4)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(1.59287, 1.94303)
+zoom = Vector2(4, 4)
+
+[node name="Level 1" parent="." instance=ExtResource("2_qxrlw")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_wrm1d")]
+enemyHp = null
+enemyDamage = null

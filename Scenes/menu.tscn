@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://bbam5sb56xkp8"]
+
+[ext_resource type="Script" uid="uid://cwtp51kwfu1r8" path="res://Scripts/menu.gd" id="1_1rerr"]
+[ext_resource type="Texture2D" uid="uid://b2i7xrvwqpqiq" path="res://Assets/arrowLeft-1.png.png" id="2_158mb"]
+[ext_resource type="Texture2D" uid="uid://b0huk1jxotyxn" path="res://Assets/settings-1.png.png" id="2_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://bbv2e7tnab0bp" path="res://Assets/Pico characters sprite .png" id="2_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://cr0vuyx7kjl3j" path="res://Assets/arrowRight-1.png.png" id="4_wwsa2"]
+[ext_resource type="PackedScene" uid="uid://divopwecpn2jq" path="res://Scenes/instructions.tscn" id="6_jsrd8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsrd8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_158mb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cayip"]
+atlas = ExtResource("2_xhh6f")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_158mb"]
+atlas = ExtResource("2_xhh6f")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwsa2"]
+atlas = ExtResource("2_xhh6f")
+region = Rect2(24, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsrd8"]
+atlas = ExtResource("2_xhh6f")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbdvm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cayip")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_158mb")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwsa2")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsrd8")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
+[node name="PanelContainer" type="PanelContainer" unique_id=526861508]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1rerr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=190554865]
+layout_mode = 2
+alignment = 1
+
+[node name="Header" type="HBoxContainer" parent="VBoxContainer" unique_id=871720168]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer/Header" unique_id=1071485239]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="lblStart" type="Label" parent="VBoxContainer/Header" unique_id=1999462566]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 72
+text = "Welcome - Choose Your Hero"
+horizontal_alignment = 1
+
+[node name="btnSettings" type="Button" parent="VBoxContainer/Header" unique_id=1233574245]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jsrd8")
+icon = ExtResource("2_wwsa2")
+icon_alignment = 1
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/Header" unique_id=1556188175]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="btnStart" type="Button" parent="VBoxContainer" unique_id=1938150967]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 72
+text = "START	
+"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer" unique_id=1042691904]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CenterContainer" unique_id=1330120746]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+
+[node name="LeftControl" type="Control" parent="VBoxContainer/CenterContainer/HBoxContainer" unique_id=1971084934]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+
+[node name="LeftArrow" type="Sprite2D" parent="VBoxContainer/CenterContainer/HBoxContainer/LeftControl" unique_id=1906838283]
+scale = Vector2(20, 20)
+texture = ExtResource("2_158mb")
+
+[node name="btnLeft" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/LeftControl/LeftArrow" unique_id=2093574188]
+show_behind_parent = true
+offset_left = -4.2
+offset_top = -3.8999999
+offset_right = 3.8000002
+offset_bottom = 4.1000004
+theme_override_styles/focus = SubResource("StyleBoxEmpty_158mb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CenterContainer/HBoxContainer" unique_id=114355085]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Spacer" type="Control" parent="VBoxContainer/CenterContainer/HBoxContainer/HBoxContainer" unique_id=1791630357]
+custom_minimum_size = Vector2(116, 0)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/CenterContainer/HBoxContainer/HBoxContainer" unique_id=226587895]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/CenterContainer/HBoxContainer/HBoxContainer/Control" unique_id=1753672521]
+scale = Vector2(25, 25)
+sprite_frames = SubResource("SpriteFrames_wbdvm")
+animation = &"0"
+
+[node name="stats" type="Label" parent="VBoxContainer/CenterContainer/HBoxContainer/HBoxContainer" unique_id=2134726756]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "HP: 12
+Damage: 4
+Hit Chance: 65%"
+
+[node name="RightControl" type="Control" parent="VBoxContainer/CenterContainer/HBoxContainer" unique_id=517448371]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="RightArrow" type="Sprite2D" parent="VBoxContainer/CenterContainer/HBoxContainer/RightControl" unique_id=252369971]
+scale = Vector2(20, 20)
+texture = ExtResource("4_wwsa2")
+
+[node name="btnRight" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/RightControl/RightArrow" unique_id=385957636]
+show_behind_parent = true
+offset_left = -4.2
+offset_top = -3.8999999
+offset_right = 3.8000002
+offset_bottom = 4.1000004
+theme_override_styles/focus = SubResource("StyleBoxEmpty_158mb")
+metadata/_edit_use_anchors_ = true
+
+[node name="btnQuit" type="Button" parent="VBoxContainer" unique_id=346377894]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "QUIT"
+
+[node name="Control" type="Control" parent="." unique_id=947244141]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PanelContainer" parent="Control" unique_id=39170644 instance=ExtResource("6_jsrd8")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 115.0
+offset_top = 65.0
+offset_right = 1267.0
+offset_bottom = 713.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.8, 0.8)
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="VBoxContainer/Header/btnSettings" to="." method="_on_btnSettings_pressed"]
+[connection signal="pressed" from="VBoxContainer/btnStart" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer/HBoxContainer/LeftControl/LeftArrow/btnLeft" to="." method="_on_btn_left_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer/HBoxContainer/RightControl/RightArrow/btnRight" to="." method="_on_btn_right_pressed"]
+[connection signal="pressed" from="VBoxContainer/btnQuit" to="." method="_on_btn_quit_pressed"]

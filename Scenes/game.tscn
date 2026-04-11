@@ -1,0 +1,432 @@
+[gd_scene format=3 uid="uid://bvsogtmp23ql5"]
+
+[ext_resource type="PackedScene" uid="uid://crw8lrptyp2w1" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://dorq5in2lbjla" path="res://Scripts/game.gd" id="1_wowpa"]
+[ext_resource type="PackedScene" uid="uid://csbs333exjuf5" path="res://Scenes/level1.tscn" id="2_qxrlw"]
+[ext_resource type="Texture2D" uid="uid://bioxe08cb78df" path="res://Assets/nextArrow-1.png.png" id="4_1l0tm"]
+[ext_resource type="Script" uid="uid://ckmv6s1th8swp" path="res://Scripts/pickupSpawner.gd" id="5_i6g32"]
+[ext_resource type="Texture2D" uid="uid://b2vsqyjoyq1bi" path="res://Assets/exit-1.png.png" id="5_v158k"]
+[ext_resource type="PackedScene" uid="uid://8idxvtfq75ev" path="res://Scenes/door.tscn" id="6_i6g32"]
+[ext_resource type="Texture2D" uid="uid://cmbg7v35mrxyl" path="res://Assets/heart8x8-1.png.png" id="6_rfjv2"]
+[ext_resource type="Texture2D" uid="uid://tnuru4mac0bg" path="res://Assets/diamond-1.png.png" id="7_1phco"]
+[ext_resource type="Texture2D" uid="uid://catnodlnrww5" path="res://Assets/coins.png" id="7_nnt18"]
+[ext_resource type="Texture2D" uid="uid://48vh3ff6x1xu" path="res://Assets/emerald-1.png.png" id="9_ewbju"]
+[ext_resource type="PackedScene" uid="uid://di3iaki3uulh6" path="res://Scenes/powerUp.tscn" id="9_h4fw4"]
+[ext_resource type="Texture2D" uid="uid://btukyij6oubec" path="res://Assets/Ironchests_RPG_items_pico8_transparentbg_v1.png" id="10_ldgsr"]
+[ext_resource type="Script" uid="uid://dq7kogeqjgfbd" path="res://Scripts/enemySpawner.gd" id="11_o5yvi"]
+[ext_resource type="PackedScene" uid="uid://c828wk21y6vb3" path="res://Scenes/powerUpCard.tscn" id="11_rku1e"]
+[ext_resource type="PackedScene" uid="uid://unvmuviddhr8" path="res://Scenes/audio.tscn" id="12_rku1e"]
+
+[sub_resource type="GDScript" id="GDScript_i6g32"]
+script/source = "extends Button
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1phco"]
+atlas = ExtResource("6_rfjv2")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nb51f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1phco")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnt18"]
+atlas = ExtResource("10_ldgsr")
+region = Rect2(296, 272, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewbju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnt18")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85qyi"]
+atlas = ExtResource("7_nnt18")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iivbl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85qyi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nbq1"]
+atlas = ExtResource("7_nnt18")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_exi56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nbq1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t8sx"]
+atlas = ExtResource("7_1phco")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mg4q0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t8sx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm72l"]
+atlas = ExtResource("9_ewbju")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22asu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm72l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvu47"]
+atlas = ExtResource("10_ldgsr")
+region = Rect2(504, 416, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0q1e"]
+atlas = ExtResource("10_ldgsr")
+region = Rect2(328, 208, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0twn"]
+atlas = ExtResource("10_ldgsr")
+region = Rect2(40, 304, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkpu0"]
+atlas = ExtResource("10_ldgsr")
+region = Rect2(280, 304, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5yvi"]
+atlas = ExtResource("10_ldgsr")
+region = Rect2(152, 272, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgkli"]
+atlas = ExtResource("10_ldgsr")
+region = Rect2(216, 728, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drskx"]
+atlas = ExtResource("10_ldgsr")
+region = Rect2(424, 232, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rku1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvu47")
+}],
+"loop": true,
+"name": &"Crown of Ruin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0q1e")
+}],
+"loop": true,
+"name": &"Gloves of Midas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0twn")
+}],
+"loop": true,
+"name": &"Golden Sword",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkpu0")
+}],
+"loop": true,
+"name": &"Iron Shield",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5yvi")
+}],
+"loop": true,
+"name": &"Kingly Sword",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgkli")
+}],
+"loop": true,
+"name": &"Shadow Ring",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drskx")
+}],
+"loop": true,
+"name": &"Warrior\'s Helm",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=211855560]
+script = ExtResource("1_wowpa")
+
+[node name="Player" parent="." unique_id=1745386152 instance=ExtResource("1_ebmjs")]
+z_index = 43
+position = Vector2(4, 4)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=785888255]
+scale = Vector2(1.59287, 1.94303)
+zoom = Vector2(5, 5)
+
+[node name="Level 1" parent="." unique_id=1056281476 instance=ExtResource("2_qxrlw")]
+
+[node name="btnNext" type="Button" parent="Level 1" unique_id=41873941]
+visible = false
+offset_left = 177.0
+offset_top = 11.0
+offset_right = 226.0
+offset_bottom = 42.0
+icon = ExtResource("4_1l0tm")
+script = SubResource("GDScript_i6g32")
+
+[node name="btnReturn" type="Button" parent="Level 1" unique_id=1054562656]
+visible = false
+offset_left = 182.0
+offset_top = -42.0
+offset_right = 209.0
+offset_bottom = -11.0
+icon = ExtResource("5_v158k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=333801236]
+
+[node name="HP" type="Label" parent="CanvasLayer" unique_id=231585660]
+unique_name_in_owner = true
+offset_left = 41.0
+offset_top = 6.0
+offset_right = 102.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 32
+text = "HP:"
+
+[node name="Control" type="Control" parent="CanvasLayer/HP" unique_id=989696074]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HP/Control" unique_id=366325707]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_nb51f")
+offset = Vector2(-5, 0)
+
+[node name="Control2" type="Control" parent="CanvasLayer/HP" unique_id=1238649585]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="shieldSprite" type="AnimatedSprite2D" parent="CanvasLayer/HP/Control2" unique_id=763985770]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_ewbju")
+offset = Vector2(5, 0)
+
+[node name="lblShield" type="Label" parent="CanvasLayer/HP/Control2" unique_id=1258338569]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 35.0
+offset_top = -22.5
+offset_right = 129.0
+offset_bottom = 22.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Shield"
+
+[node name="Silver" type="Label" parent="CanvasLayer" unique_id=245122231]
+offset_left = 41.0
+offset_top = 40.0
+offset_right = 135.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "Silver:"
+
+[node name="Control" type="Control" parent="CanvasLayer/Silver" unique_id=105184467]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Silver/Control" unique_id=688551138]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_iivbl")
+offset = Vector2(-5, 0)
+
+[node name="Gold" type="Label" parent="CanvasLayer" unique_id=2080600857]
+offset_left = 41.0
+offset_top = 74.0
+offset_right = 121.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 32
+text = "Gold:"
+
+[node name="Control" type="Control" parent="CanvasLayer/Gold" unique_id=1344931441]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Gold/Control" unique_id=1516856278]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_exi56")
+offset = Vector2(-5, 0)
+
+[node name="Diamond" type="Label" parent="CanvasLayer" unique_id=935405605]
+offset_left = 41.0
+offset_top = 108.0
+offset_right = 191.0
+offset_bottom = 153.0
+theme_override_font_sizes/font_size = 32
+text = "Diamond:"
+
+[node name="Control" type="Control" parent="CanvasLayer/Diamond" unique_id=1311040629]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Diamond/Control" unique_id=547733153]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_mg4q0")
+offset = Vector2(-5, 0)
+
+[node name="Emerald" type="Label" parent="CanvasLayer" unique_id=292428167]
+offset_left = 41.0
+offset_top = 140.0
+offset_right = 178.0
+offset_bottom = 185.0
+theme_override_font_sizes/font_size = 32
+text = "Emerald:"
+
+[node name="Control" type="Control" parent="CanvasLayer/Emerald" unique_id=171732291]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Emerald/Control" unique_id=1175772294]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_22asu")
+offset = Vector2(-5, 0)
+
+[node name="Damage" type="Label" parent="CanvasLayer" unique_id=1431996559]
+visible = false
+offset_left = 7.0
+offset_top = 156.0
+offset_right = 143.0
+offset_bottom = 201.0
+theme_override_font_sizes/font_size = 32
+text = "Damage:"
+
+[node name="Level" type="Label" parent="CanvasLayer" unique_id=974360473]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -47.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "Level:"
+
+[node name="powerUpCard" parent="CanvasLayer" unique_id=1570857049 instance=ExtResource("11_rku1e")]
+visible = false
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+size_flags_horizontal = 0
+
+[node name="Power" type="Control" parent="CanvasLayer" unique_id=579947211]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 37.0
+offset_top = 85.0
+offset_right = 62.0
+offset_bottom = 110.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Power" unique_id=777003132]
+position = Vector2(0, 141)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_rku1e")
+animation = &"Warrior\'s Helm"
+centered = false
+offset = Vector2(-2, -2)
+
+[node name="Active Power" type="Label" parent="CanvasLayer/Power" unique_id=1448361044]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 200.0
+offset_right = 95.0
+offset_bottom = 228.0
+theme_override_font_sizes/font_size = 20
+text = "Kingly Sword"
+
+[node name="Coins" type="Node" parent="." unique_id=1750358067]
+script = ExtResource("5_i6g32")
+
+[node name="Door" parent="." unique_id=1962161104 instance=ExtResource("6_i6g32")]
+position = Vector2(196, -4)
+
+[node name="PowerUp" parent="." unique_id=638201161 instance=ExtResource("9_h4fw4")]
+visible = false
+
+[node name="EnemySpawner" type="Node" parent="." unique_id=429945322]
+script = ExtResource("11_o5yvi")
+
+[node name="AudioStreamPlayer" parent="." unique_id=610295750 instance=ExtResource("12_rku1e")]
+
+[connection signal="pressed" from="Level 1/btnNext" to="." method="_on_btn_next_pressed"]
+[connection signal="pressed" from="Level 1/btnReturn" to="." method="_on_btn_return_pressed"]
+[connection signal="ready" from="EnemySpawner" to="EnemySpawner" method="_on_ready"]

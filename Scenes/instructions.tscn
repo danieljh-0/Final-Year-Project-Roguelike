@@ -1,0 +1,297 @@
+[gd_scene format=3 uid="uid://divopwecpn2jq"]
+
+[ext_resource type="Texture2D" uid="uid://catnodlnrww5" path="res://Assets/coins.png" id="1_8p7yn"]
+[ext_resource type="Script" uid="uid://d0mc4kekqib1j" path="res://Scripts/instructions.gd" id="1_s7gfc"]
+[ext_resource type="Texture2D" uid="uid://tnuru4mac0bg" path="res://Assets/diamond-1.png.png" id="2_5doqj"]
+[ext_resource type="Texture2D" uid="uid://48vh3ff6x1xu" path="res://Assets/emerald-1.png.png" id="3_s7gfc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bybfc"]
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8p7yn"]
+bg_color = Color(0.78431374, 0.5019608, 0.6117647, 0)
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxknu"]
+atlas = ExtResource("1_8p7yn")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5doqj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxknu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p7yn"]
+atlas = ExtResource("1_8p7yn")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxknu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p7yn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8bcc"]
+atlas = ExtResource("2_5doqj")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3oir0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8bcc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxjdl"]
+atlas = ExtResource("3_s7gfc")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjvro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxjdl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7gfc"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8bcc"]
+bg_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oir0"]
+bg_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7tff"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0a2tu"]
+bg_color = Color(0.3403393, 0.34033936, 0.34033918, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="PanelContainer" type="PanelContainer" unique_id=39170644]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bybfc")
+script = ExtResource("1_s7gfc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=762981167]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=1367160317]
+custom_minimum_size = Vector2(1152, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8p7yn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel" unique_id=1630556161]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 0
+offset_left = 414.0
+offset_top = 4.0
+offset_right = 738.0
+offset_bottom = 154.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/HBoxContainer" unique_id=498841549]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "HOW TO PLAY"
+
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=346376611]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1450576858]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="Label1" type="Label" parent="VBoxContainer/Control" unique_id=640774359]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -534.5
+offset_right = 534.5
+offset_bottom = 189.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "The aim of the game is to progress through the dungeon rooms,
+collecting various resources and fighting enemies.
+Each hero has their own strengths and weaknesses so choose wisely.
+In order to win, you will need to collect:"
+
+[node name="Label3" type="Label" parent="VBoxContainer/Control" unique_id=1642059662]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -546.0
+offset_right = 546.0
+offset_bottom = 237.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Levels get harder the further you get into the game, but rewards
+also increase. There are also weapons and equipment that you can
+find and pick up to become stronger. At the end of each level, you can 
+choose to either continue to the next level or reset to the first level 
+and heal back up to full health. You can only carry one weapon at a 
+time so if you pick up a second one it will replace the first.
+
+Use WASD to move, and Space to skip turn."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1256928357]
+custom_minimum_size = Vector2(0, 189)
+layout_mode = 2
+
+[node name="Icons" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=610910337]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/Icons" unique_id=2133136087]
+position = Vector2(115, -73)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_5doqj")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/Icons" unique_id=468023263]
+position = Vector2(115, -25)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_dxknu")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/Icons" unique_id=2136122226]
+position = Vector2(115, 26)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_3oir0")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/Icons" unique_id=1818867432]
+position = Vector2(115, 71)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_tjvro")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1130971153]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "25 silver
+20 gold
+10 diamonds
+5 emeralds"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=14206352]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+
+[node name="btnLeft" type="Button" parent="VBoxContainer/HBoxContainer/HBoxContainer" unique_id=1053282443]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7gfc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v8bcc")
+text = " < "
+
+[node name="page" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer" unique_id=607789418]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "1 / 2"
+
+[node name="btnRight" type="Button" parent="VBoxContainer/HBoxContainer/HBoxContainer" unique_id=1489043028]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7gfc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3oir0")
+text = " > "
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=2001165443]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1223048583]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_a7tff")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0a2tu")
+text = "PLAY"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/HBoxContainer/btnLeft" to="." method="_on_btnLeft_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/HBoxContainer/btnRight" to="." method="_on_btnRight_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

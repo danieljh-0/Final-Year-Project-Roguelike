@@ -1,0 +1,338 @@
+[gd_scene load_steps=24 format=3 uid="uid://c828wk21y6vb3"]
+
+[ext_resource type="Script" uid="uid://bm8co8eridow4" path="res://Scripts/power_up_card.gd" id="1_0a2tu"]
+[ext_resource type="Texture2D" uid="uid://btukyij6oubec" path="res://Assets/Ironchests_RPG_items_pico8_transparentbg_v1.png" id="1_m15hh"]
+[ext_resource type="Texture2D" uid="uid://bbv2e7tnab0bp" path="res://Assets/Pico characters sprite .png" id="2_a7tff"]
+[ext_resource type="Texture2D" uid="uid://cmbg7v35mrxyl" path="res://Assets/heart8x8-1.png.png" id="3_0a2tu"]
+[ext_resource type="Texture2D" uid="uid://catnodlnrww5" path="res://Assets/coins.png" id="4_c0d4k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w54ol"]
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m15hh"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvu47"]
+atlas = ExtResource("1_m15hh")
+region = Rect2(504, 416, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0q1e"]
+atlas = ExtResource("1_m15hh")
+region = Rect2(328, 208, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0twn"]
+atlas = ExtResource("1_m15hh")
+region = Rect2(40, 304, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkpu0"]
+atlas = ExtResource("1_m15hh")
+region = Rect2(280, 304, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5yvi"]
+atlas = ExtResource("1_m15hh")
+region = Rect2(152, 272, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgkli"]
+atlas = ExtResource("1_m15hh")
+region = Rect2(216, 728, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drskx"]
+atlas = ExtResource("1_m15hh")
+region = Rect2(424, 232, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1w0y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvu47")
+}],
+"loop": true,
+"name": &"Crown of Ruin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0q1e")
+}],
+"loop": true,
+"name": &"Gloves of Midas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0twn")
+}],
+"loop": true,
+"name": &"Golden Sword",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkpu0")
+}],
+"loop": true,
+"name": &"Iron Shield",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5yvi")
+}],
+"loop": true,
+"name": &"Kingly Sword",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgkli")
+}],
+"loop": true,
+"name": &"Shadow Ring",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drskx")
+}],
+"loop": true,
+"name": &"Warrior\'s Helm",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snous"]
+atlas = ExtResource("1_m15hh")
+region = Rect2(8, 272, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwwc1"]
+atlas = ExtResource("2_a7tff")
+region = Rect2(8, 56, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ohb"]
+atlas = ExtResource("1_m15hh")
+region = Rect2(344, 464, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flsyn"]
+atlas = ExtResource("3_0a2tu")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8waf5"]
+atlas = ExtResource("4_c0d4k")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m15hh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snous")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwwc1")
+}],
+"loop": true,
+"name": &"enemy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ohb")
+}],
+"loop": true,
+"name": &"hitChance",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flsyn")
+}],
+"loop": true,
+"name": &"hp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8waf5")
+}],
+"loop": true,
+"name": &"resource",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7tff"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0a2tu"]
+bg_color = Color(0.3403393, 0.34033936, 0.34033918, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="PanelContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(400, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w54ol")
+script = ExtResource("1_0a2tu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(275, 180)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m15hh")
+
+[node name="Control" type="Control" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="powerUpImage" type="AnimatedSprite2D" parent="VBoxContainer/Panel/Control"]
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_s1w0y")
+animation = &"Iron Shield"
+offset = Vector2(1.5, 1)
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="lblName" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Power Up Name"
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(114, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="lblRarity" type="Label" parent="VBoxContainer/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -14.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Rarity"
+horizontal_alignment = 2
+
+[node name="Spacer3" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainerStats" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="spriteWrapper" type="Control" parent="VBoxContainer/HBoxContainerStats"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="icon1" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainerStats/spriteWrapper"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_m15hh")
+animation = &"damage"
+offset = Vector2(5, 0)
+
+[node name="lblStat1" type="Label" parent="VBoxContainer/HBoxContainerStats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Power up effect 1"
+
+[node name="HBoxContainerStats2" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="spriteWrapper" type="Control" parent="VBoxContainer/HBoxContainerStats2"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="icon2" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainerStats2/spriteWrapper"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_m15hh")
+animation = &"damage"
+offset = Vector2(5, 0)
+
+[node name="lblStat2" type="Label" parent="VBoxContainer/HBoxContainerStats2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Power up effect 1"
+
+[node name="Spacer4" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_a7tff")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0a2tu")
+text = "EQUIP"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

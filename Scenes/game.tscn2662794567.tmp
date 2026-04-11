@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvsogtmp23ql5"]
+
+[ext_resource type="PackedScene" uid="uid://crw8lrptyp2w1" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://dorq5in2lbjla" path="res://Scripts/game.gd" id="1_wowpa"]
+[ext_resource type="PackedScene" uid="uid://csbs333exjuf5" path="res://Scenes/level1.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://djxd763n5jfw6" path="res://Scenes/enemy.tscn" id="3_wrm1d"]
+[ext_resource type="Script" uid="uid://ckmv6s1th8swp" path="res://Scripts/pickupSpawner.gd" id="5_i6g32"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wowpa")
+
+[node name="Player" parent="." instance=ExtResource("1_ebmjs")]
+z_index = 43
+position = Vector2(4, 4)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(1.59287, 1.94303)
+zoom = Vector2(5, 5)
+
+[node name="Level 1" parent="." instance=ExtResource("2_qxrlw")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_wrm1d")]
+
+[node name="Enemy2" parent="." instance=ExtResource("3_wrm1d")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 47.0
+offset_bottom = 29.0
+text = "HP: "
+
+[node name="Silver" type="Label" parent="CanvasLayer"]
+offset_left = 7.0
+offset_top = 27.0
+offset_right = 54.0
+offset_bottom = 50.0
+text = "Silver:"
+
+[node name="Gold" type="Label" parent="CanvasLayer"]
+offset_left = 7.0
+offset_top = 48.0
+offset_right = 54.0
+offset_bottom = 71.0
+text = "Gold:"
+
+[node name="Coins" type="Node" parent="."]
+script = ExtResource("5_i6g32")

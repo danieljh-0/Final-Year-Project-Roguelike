@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://8idxvtfq75ev"]
+
+[ext_resource type="Script" uid="uid://dpgwsp2gloqf3" path="res://Scripts/door.gd" id="1_p0e35"]
+[ext_resource type="Texture2D" uid="uid://bw4ebngxqa6pq" path="res://Assets/door-1.png.png" id="1_w6aom"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0e35"]
+atlas = ExtResource("1_w6aom")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fahql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0e35")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6aom"]
+size = Vector2(6, 8)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_p0e35")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fahql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w6aom")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="ready" from="." to="." method="_on_ready"]

@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://djkwkjnmpvcpu"]
+
+[ext_resource type="Script" uid="uid://ch0pm451f4i4f" path="res://Scripts/reset.gd" id="1_pldob"]
+[ext_resource type="Texture2D" uid="uid://bbv2e7tnab0bp" path="res://Assets/Pico characters sprite .png" id="2_o1eg0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6krm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pldob"]
+bg_color = Color(0.34407556, 0.3440758, 0.34407565, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltptl"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5qls"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cayip"]
+atlas = ExtResource("2_o1eg0")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_158mb"]
+atlas = ExtResource("2_o1eg0")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwsa2"]
+atlas = ExtResource("2_o1eg0")
+region = Rect2(24, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsrd8"]
+atlas = ExtResource("2_o1eg0")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6krm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cayip")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_158mb")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwsa2")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsrd8")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1eg0"]
+bg_color = Color(0.34509805, 0.34509805, 0.34509805, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24gtu"]
+bg_color = Color(0.05197096, 0.051970966, 0.051970914, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlsde"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1178455256]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_pldob")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=990467624]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=1444938085]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c6krm")
+
+[node name="HBoxContainerHead" type="HBoxContainer" parent="VBoxContainer/Panel" unique_id=1182250232]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 0
+offset_top = 4.0
+offset_right = 1152.0
+offset_bottom = 254.0
+
+[node name="Control" type="Control" parent="VBoxContainer/Panel/HBoxContainerHead" unique_id=1575143615]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+
+[node name="btnQuit" type="Button" parent="VBoxContainer/Panel/HBoxContainerHead" unique_id=819128862]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_pldob")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ltptl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v5qls")
+text = "QUIT"
+
+[node name="lblTitle" type="Label" parent="VBoxContainer/Panel/HBoxContainerHead" unique_id=770842638]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "You reset to the start - 
+health has been restored"
+horizontal_alignment = 1
+
+[node name="HBoxContainerBody" type="HBoxContainer" parent="VBoxContainer" unique_id=1118134290]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="VBoxContainerLeft" type="VBoxContainer" parent="VBoxContainer/HBoxContainerBody" unique_id=947373259]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainerBody/VBoxContainerLeft" unique_id=1798187430]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainerBody/VBoxContainerLeft/Control" unique_id=2104585440]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.0
+offset_right = 105.0
+offset_bottom = 287.0
+grow_horizontal = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 40
+text = "YOU HAVE:
+SILVER
+GOLD 
+DIAMOND
+EMERALD"
+
+[node name="VBoxContainerMiddle" type="VBoxContainer" parent="VBoxContainer/HBoxContainerBody" unique_id=1845770383]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+alignment = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainerBody/VBoxContainerMiddle" unique_id=504172666]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainerBody/VBoxContainerMiddle/Control" unique_id=1267964745]
+scale = Vector2(20, 20)
+sprite_frames = SubResource("SpriteFrames_c6krm")
+animation = &"0"
+
+[node name="lblPlayerStats" type="Label" parent="VBoxContainer/HBoxContainerBody/VBoxContainerMiddle" unique_id=303709115]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "HP: 
+Damage: 
+Hit Chance: 
+Power up: "
+horizontal_alignment = 1
+
+[node name="VBoxContainerRight" type="VBoxContainer" parent="VBoxContainer/HBoxContainerBody" unique_id=1498027899]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainerBody/VBoxContainerRight" unique_id=1450447417]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="lblStats" type="Label" parent="VBoxContainer/HBoxContainerBody/VBoxContainerRight/Control" unique_id=295825701]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -114.0
+offset_right = 124.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Stats
+Resets: 
+Kills: 
+Highest Level: "
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainerBody/VBoxContainerRight" unique_id=1670971743]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_o1eg0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_24gtu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mlsde")
+text = "CONTINUE
+"
+
+[connection signal="pressed" from="VBoxContainer/Panel/HBoxContainerHead/btnQuit" to="." method="_on_btnQuit_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainerBody/VBoxContainerRight/Button" to="." method="_on_button_pressed"]
